@@ -139,7 +139,6 @@ const styles = StyleSheet.create({
         marginVertical: 7
     },
     form: {
-        borderRadius: "20",
         marginLeft: 20,
         marginRight: 20
     }
