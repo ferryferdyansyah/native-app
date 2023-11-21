@@ -5,7 +5,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { StyleSheet } from 'react-native';
 
 const Callapi = () => {
-    const jsonUrl = 'https://script.googleusercontent.com/macros/echo?user_content_key=Tnnhgc2Z2zkCSmT7fljbXAwd0fOOxAdgFNQ3prp32bOH2LDwOsuEVEE3uiFOk7HzRE-GpXL3n62B6TJIzal8XuY3qkBLAxaZm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnO9mRq3DA5hWXXNAUfKbhETgSZODpmSQOJaU6jHL9hNoDKUYtGnZQRzTrx7Crc0j8dtwYKzQPRgvi1v-wOA4hkFbceTGl9d-Eg&lib=MG4FWbhyQ9d-sSABFCti1z8Onzbz-2L4C';
+    // jsonurl ngambil dari deploy untitle acara 10 mungkin?
+    const jsonUrl = 'https://script.google.com/macros/s/AKfycbwiI1sXJY6tkjDhMkDWeoaGAFub0CbXgZy_or5tK49S1Hxeklnb8KT9hF3bHn6nVDXh/exec';
     const [isLoading, setLoading] = useState(true);
     const [dataUser, setDataUser] = useState({});
     const [refresh, setRefresh] = useState(false);
@@ -51,14 +52,14 @@ const Callapi = () => {
                       renderItem={({ item }) => (
                           <TouchableOpacity>
                               <View style={styles.card}>
-                                  <View style={styles.avatar}>
+                                  {/* <View style={styles.avatar}>
                                       <FontAwesome5 name={item.icon} size={50} color={item.color} />
-                                  </View>
+                                  </View> */}
                                   <View>
                                       <Text style={styles.cardtitle}>{item.nama}</Text>
-                                      <Text>NIM: {item.nim}</Text>
-                                      <Text>Kelas: {item.kelas}</Text>
-                                      <Text>Jenis Kelamin: {item.jeniskelamin}</Text>
+                                      <Text>{item.deskripsi}</Text>
+                                      <Text>{item.latitude}, {item.longitude}</Text>
+                                      {/* <Text>{item.timestamp}</Text> */}
                                   </View>
                               </View>
                           </TouchableOpacity>
